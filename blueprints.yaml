@@ -5,13 +5,13 @@ version: 1.0.0
 description: "This plugin provides a shortcode for Swiffy slider"
 icon: columns
 author:
-  name: BirdyDesign
-  email: birdydesign@proton.me
-  url: https://github.com/birdydesign
-homepage: https://github.com/birdydesign/grav-plugin-shortcode-swiffy-slider
+  name: Pedro Moreno
+  email: pmoreno@pmdesign.dev
+  url: https://github.com/pmoreno-rodriguez
+homepage: https://github.com/pmoreno-rodriguez/grav-plugin-shortcode-swiffy-slider
 demo: 
 keywords: shortcode, swiffy-slsider, slider
-bugs: https://github.com/birdydesign/grav-plugin-shortcode-swiffy-slider/issues
+bugs: https://github.com/pmoreno-rodriguez/grav-plugin-shortcode-swiffy-slider/issues
 license: MIT
 
 dependencies:
