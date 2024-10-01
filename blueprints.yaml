@@ -1,0 +1,120 @@
+name: Shortcode Swiffy Slider
+slug: shortcode-swiffy-slider
+type: plugin
+version: 1.0.0
+description: "This plugin provides a shortcode for Swiffy slider"
+icon: columns
+author:
+  name: BirdyDesign
+  email: birdydesign@proton.me
+  url: https://github.com/birdydesign
+homepage: https://github.com/birdydesign/grav-plugin-shortcode-swiffy-slider
+demo: 
+keywords: shortcode, swiffy-slsider, slider
+bugs: https://github.com/birdydesign/grav-plugin-shortcode-swiffy-slider/issues
+license: MIT
+
+dependencies:
+  - { name: shortcode-core, version: '>=4.1.0' }
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin Enabled
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    
+    production-mode:
+      type: toggle
+      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.PRODUCTION_MODE
+      help: PLUGIN_SHORTCODE_SWIFFYSLIDER.PRODUCTION_MODE_HELP
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    enable_extensions:
+      type: toggle
+      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.ENABLE_EXTENSIONS
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    
+    slider.removeTitle:
+      type: toggle
+      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.REMOVE_TITLE
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    slider.settings:
+      type: spacer
+      title: PLUGIN_SHORTCODE_SWIFFYSLIDER.SLIDER_SETTINGS
+      text: PLUGIN_SHORTCODE_SWIFFYSLIDER.SLIDER_SETTINGS_TEXT
+      underline: false
+    
+    slider.autoplay:
+      type: toggle
+      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY
+      help: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_HELP
+      highlight: 0
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    slider.autoplayTimeout:
+      type: number
+      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_TIMEOUT
+      help: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_TIMEOUT_HELP
+      size: small
+      default: 2000
+      validate:
+        min: 500
+        max: 6000
+
+    slider.autoplayPauseOnHover:
+      type: toggle
+      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_PAUSE
+      help: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_PAUSE_HELP
+      highlight: 0
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    
+    custom_css:
+      label: PLUGIN_ADMIN.CUSTOM_CSS_LABEL
+      placeholder: PLUGIN_ADMIN.CUSTOM_CSS_PLACEHOLDER
+      help: PLUGIN_ADMIN.CUSTOM_CSS_HELP
+      type: editor
+      codemirror:
+        mode: 'css'
+        indentUnit: 2
+        autofocus: true
+        indentWithTabs: true
+        lineNumbers: true
+        styleActiveLine: true
+            

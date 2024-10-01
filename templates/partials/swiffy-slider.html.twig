@@ -1,0 +1,20 @@
+<div class="swiffy-slider {% if swiffy_autoplay %}{{ swiffy_autoplay }} {% endif %}
+{% if swiffy_autoplayPauseOnHover %}{{ swiffy_autoplayPauseOnHover }} {% endif %} 
+{{ classes }}" 
+id="{{ swiffy_id }}" {% if swiffy_autoplay %}data-slider-nav-autoplay-interval="{{ swiffy_autoplayTimeout }}{% endif %}">
+    <ul class="slider-container">
+        {% for image in images %}
+        <li>{{ image["image"]|raw }}</li>
+        {% endfor %}
+    </ul>
+
+    <a role="button" class="slider-nav"></a>
+    <a role="button" class="slider-nav slider-nav-next"></a>
+    
+    <div class="slider-indicators">
+    {% for image in images %}
+        <a role="button"></a>
+    {% endfor %}
+    </div>
+</div>
+

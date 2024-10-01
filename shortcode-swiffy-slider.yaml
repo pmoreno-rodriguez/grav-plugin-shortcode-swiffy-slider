@@ -1,0 +1,35 @@
+enabled: true
+enable_extensions: true
+production-mode: false
+slider:
+  removeTitle: true
+  numItems: 1
+  numItemsMobile: false
+  reveal: false
+  enable_aspectRatio: false
+  aspectRatio: slider-item-ratio
+  enable_gap: true
+  snaps: null
+  navType: null
+  arrowsPosition: null
+  navdark: false
+  navsmall: false
+  navsScrollbar: false
+  alwaysVisible: false
+  noDelay: false
+  entirePage: false
+  loop: false
+  autoplay: false
+  autoplayTimeout: 2000
+  autoplayPauseOnHover: false
+  enable_animations: false
+  animations: null
+  animationSpeed: null
+  indicatorsStyle: null
+  indicatorsDark: false
+  indicatorsOutside: false
+  indicatorsHighlight: false
+  indicatorsSmall: false
+
+
+
