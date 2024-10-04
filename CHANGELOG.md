@@ -1,5 +1,16 @@
-# v1.0.0
-## 10/10/2024
+
+# v1.1.0
+## 10/04/2024
 
 1. [](#new)
-    * ChangeLog started...
+   * Added `data-slider-nav-animation` to shortcode classes
+2. [](#improved)
+   * Updated shortcode documentation in README
+   * Updated translations
+   * Removed autoplay options from blueprint
+   
+# v1.0.0
+## 10/01/2024
+
+1. [](#new)
+   * ChangeLog started...
