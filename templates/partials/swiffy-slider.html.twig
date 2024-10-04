@@ -1,7 +1,7 @@
-<div class="swiffy-slider {% if swiffy_autoplay %}{{ swiffy_autoplay }} {% endif %}
-{% if swiffy_autoplayPauseOnHover %}{{ swiffy_autoplayPauseOnHover }} {% endif %} 
-{{ classes }}" 
-id="{{ swiffy_id }}" {% if swiffy_autoplay %}data-slider-nav-autoplay-interval="{{ swiffy_autoplayTimeout }}{% endif %}">
+<div class="swiffy-slider {% if swiffy_autoplay !=false %} slider-nav-autoplay {% endif %}
+{% if swiffy_autoplayPauseOnHover !=false %} slider-nav-autopause {% endif %} 
+{{ classes|trim }}" 
+id="{{ swiffy_id }}" {% if swiffy_autoplay and swiffy_autoplayTimeout|length > 0 %}data-slider-nav-autoplay-interval="{{ swiffy_autoplayTimeout }}"{% endif %}>
     <ul class="slider-container">
         {% for image in images %}
         <li>{{ image["image"]|raw }}</li>
