@@ -32,10 +32,13 @@ Alternatively it can be installed via the [Admin Plugin](http://learn.getgrav.or
 This is a basic example that shows off how you can easily turn 3 images into a slider:
 
 ```
-[swiffy-slider classes="slider-item-show2 slider-nav-noloop slider-indicators-dark slider-indicators-outside" ]
-![pic01](pic04.jpg "pic01")
-![pic02](pic03.jpg "pic02")
-![pic03](pic02.jpg "pic03")
+[swiffy-slider autoplay=true autoplayTimeout=3000 autoplayPauseOnHover=true classes="item-show2 indicators-dark indicators-outside"]
+![pic04](pic04.jpg "Image 1<br />This is the first image<br />Additional info")
+![pic03](pic03.jpg "pic02")
+![pic02](pic02.jpg "pic03")
+![pic02](pic02.jpg "pic04")
+![pic02](pic02.jpg "pic05")
+![pic02](pic02.jpg "pic06")
 [/swiffy-slider]
 ```
 
@@ -88,9 +91,9 @@ For the `swiffy-slider` wrapper. The `slider-nav-*` option classes affect the `s
 | `slider-nav-page` | Slides the entire page when showing more than one slide item on the slider wrapper. Default behavior moves just one slide to the left or right. |
 | `slider-nav-noloop` | Disables slider loop - so when on first/last slide, navigating previous/next does not take the user to the last/first slide. |
 | `slider-nav-nodelay` | Disables smooth scrolling when sliding using navigation buttons, indicators, and autoplay. Makes the new slide or page appear instantly with no scroll smoothing. Does not affect touch navigation. |
-| `slider-nav-autoplay` | Automatically slides to the next slide or next page in intervals. Default is 2500 ms = 2.5s. |
-| `data-slider-nav-autoplay-interval` attribute | Changes the default autoplay interval - value is in ms. `data-slider-nav-autoplay-interval="3000"`. Default value is 2500, minimum value is 750 ms. |
-| `slider-nav-autopause` | Stops and restarts autoplay when the mouse is hovering over the slider wrapper or when it is touched on touch devices. Will restart on mouseout, but not when touch ends. |
+| `autoplay` | Automatically slides to the next slide or next page in intervals. Default is 2500 ms = 2.5s. It can be `true` or `false` |
+| `autoplayTimeout` attribute | Changes the default autoplay interval - value is in ms. `data-slider-nav-autoplay-interval="3000"`. Default value is 2500, minimum value is 750 ms. |
+| `autoplayPauseOnHover` | Stops and restarts autoplay when the mouse is hovering over the slider wrapper or when it is touched on touch devices. Will restart on mouseout, but not when touch ends. It can be `true` or `false`|
 | `slider-nav-round`<br> `slider-nav-square`<br> `slider-nav-arrow`<br> `slider-nav-chevron`<br> `slider-nav-caret`<br> `slider-nav-caretfill` | Changes the default navigation chevrons to an alternative navigation style using different arrows. |
 | `slider-nav-touch` | Shows navigation buttons on touch devices. By default, navigation buttons are hidden on touch devices using the `media (hover: none)` query. Adding this option makes the navigation buttons always visible on touch devices. |
 | `slider-nav-visible` | Makes the nav buttons visible always. By default, navigation buttons are hidden until the slider wrapper is hovered. |
