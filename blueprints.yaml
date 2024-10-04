@@ -1,7 +1,7 @@
 name: Shortcode Swiffy Slider
 slug: shortcode-swiffy-slider
 type: plugin
-version: 1.0.0
+version: 1.1.0
 description: "This plugin provides a shortcode for Swiffy slider"
 icon: columns
 author:
@@ -48,57 +48,6 @@ form:
       label: PLUGIN_SHORTCODE_SWIFFYSLIDER.ENABLE_EXTENSIONS
       highlight: 1
       default: 1
-      options:
-        1: PLUGIN_ADMIN.ENABLED
-        0: PLUGIN_ADMIN.DISABLED
-      validate:
-        type: bool
-    
-    slider.removeTitle:
-      type: toggle
-      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.REMOVE_TITLE
-      highlight: 1
-      default: 1
-      options:
-        1: PLUGIN_ADMIN.ENABLED
-        0: PLUGIN_ADMIN.DISABLED
-      validate:
-        type: bool
-
-    slider.settings:
-      type: spacer
-      title: PLUGIN_SHORTCODE_SWIFFYSLIDER.SLIDER_SETTINGS
-      text: PLUGIN_SHORTCODE_SWIFFYSLIDER.SLIDER_SETTINGS_TEXT
-      underline: false
-    
-    slider.autoplay:
-      type: toggle
-      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY
-      help: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_HELP
-      highlight: 0
-      default: 0
-      options:
-        1: PLUGIN_ADMIN.ENABLED
-        0: PLUGIN_ADMIN.DISABLED
-      validate:
-        type: bool
-
-    slider.autoplayTimeout:
-      type: number
-      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_TIMEOUT
-      help: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_TIMEOUT_HELP
-      size: small
-      default: 2000
-      validate:
-        min: 500
-        max: 6000
-
-    slider.autoplayPauseOnHover:
-      type: toggle
-      label: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_PAUSE
-      help: PLUGIN_SHORTCODE_SWIFFYSLIDER.AUTOPLAY_PAUSE_HELP
-      highlight: 0
-      default: 0
       options:
         1: PLUGIN_ADMIN.ENABLED
         0: PLUGIN_ADMIN.DISABLED

@@ -61,22 +61,14 @@ class SwiffySliderShortcode extends Shortcode
             if ($custom_css) {
                 $this->grav['assets']->addInlineCss($custom_css);
             }
-
-            
-            // overwrite default slider settings, if set by user
-            $swiffy_removeTitle = $shortcode->getParameter('removeTitle', $pluginConfig['slider']['removeTitle']);
-
-
+          
             // Autoplay
-            if ($shortcode->getParameter('autoplay', $pluginConfig['slider']['autoplay'], true)) {
-                $swiffy_autoplay = 'slider-nav-autoplay';
-                $swiffy_autoplayTimeout = ($shortcode->getParameter('autoplayTimeout', $pluginConfig['slider']['autoplayTimeout']));
-                $swiffy_autoplayPauseOnHover = ($shortcode->getParameter('autoplayPauseOnHover', $pluginConfig['slider']['autoplayPauseOnHover'], true)) ? 'slider-nav-autopause' : '';
-            } else {
-                $swiffy_autoplay = '';
-                $swiffy_autoplayTimeout = '';
-            }
+            $swiffy_autoplay = $shortcode->getParameter('autoplay', 'false');
+            $swiffy_autoplayPauseOnHover = $shortcode->getParameter('autoplayPauseOnHover', 'true');
+            $swiffy_autoplayTimeout = $shortcode->getParameter('autoplayTimeout', '4000');
 
+            //Animation options
+            $swiffy_animationThreshold = $shortcode->getParameter('animationTreshold','0.3');
 
             /**** LOAD CONTENT ****/
 
@@ -87,7 +79,7 @@ class SwiffySliderShortcode extends Shortcode
             $content = preg_replace('(<p>|</p>)', '', $content);
             // split up images to arrays of img links
             preg_match_all('|<img.*?>|', $content, $images);
-            
+
             $images_final = [];
             foreach ($images[0] as $image) {
                 // get src attribute
@@ -96,37 +88,43 @@ class SwiffySliderShortcode extends Shortcode
                 // get alt attribute
                 preg_match('|alt="(.*?)"|', $image, $alts);
 
-                // get title attribute - and strip html from it
-                // e.g.:    "<strong>Title 1</strong><br />Example 1<br/>More description<br>Bla bla"
-                // becomes: "Title 1 | Example 1 | More description | Bla bla"
-                preg_match('/title="(.*?)"/', $image);
+                // get title attribute and clean it
+                preg_match('/title="(.*?)"/', $image, $desc);
                 $title_clean = null;
+
+                // If a title exists, process it
                 if (!empty($desc)) {
-                    if (!filter_var($swiffy_removeTitle, FILTER_VALIDATE_BOOLEAN)) {
-                        // replace br tags with " | "
-                        $title_clean = preg_replace('/<br *\/*>/', ' | ', html_entity_decode($desc[1]));
-                        // strip html
-                        $title_clean = strip_tags(html_entity_decode($title_clean));
-                        // set as new title
-                        $image = preg_replace('/title=".*?"/', "title=\"$title_clean\"", $image);
-                    } else {
-                        $image = preg_replace('/title=".*?" /', "", $image);
-                    }
+                    // replace <br> tags with " | "
+                    $title_clean = preg_replace('/<br *\/*>/', '. ', html_entity_decode($desc[1]));
+                    // strip html
+                    $title_clean = strip_tags(html_entity_decode($title_clean));
+                    // set as new title
+                    $image = preg_replace('/title=".*?"/', "title=\"$title_clean\"", $image);
                 } else {
-                    $desc[1] = null;
+                    // If no title, ensure title_clean is null
+                    $title_clean = null;
                 }
 
-                // combine
+                // Combine and push the image data into final array
                 array_push($images_final, [
-                    // full
                     "image" => $image,
                     "src" => $links[1],
                     "alt" => $alts[1],
                     "title" => $title_clean,
-                    ]);
+                ]);
             }
 
             $classes = $shortcode->getParameter('classes', '');
+
+            // Transform classes, add "slider-" if they don't already have it
+            $classes_array = explode(' ', $classes);
+            $prefixed_classes = array_map(function($class) {
+                return (strpos($class, 'slider-') === 0) ? $class : 'slider-' . $class;
+            }, $classes_array);
+
+            // Join the classes back into a string
+            $classes = implode(' ', $prefixed_classes);
+
             
             return $this->twig->processTemplate(
                 'partials/swiffy-slider.html.twig',
@@ -135,9 +133,10 @@ class SwiffySliderShortcode extends Shortcode
                     'swiffy_id' => $id,
                     
                     // carousel settings
-                    'swiffy_autoplay' => $swiffy_autoplay,
+                    'swiffy_autoplay' => filter_var($swiffy_autoplay, FILTER_VALIDATE_BOOLEAN),
+                    'swiffy_autoplayPauseOnHover' => filter_var($swiffy_autoplayPauseOnHover, FILTER_VALIDATE_BOOLEAN),
                     'swiffy_autoplayTimeout' => $swiffy_autoplayTimeout,
-                    'swiffy_autoplayPauseOnHover' => isset($swiffy_autoplayPauseOnHover),
+                    'swiffy_animationThreshold' => $swiffy_animationThreshold,
                     'classes' => $classes,
                     
                     // images
