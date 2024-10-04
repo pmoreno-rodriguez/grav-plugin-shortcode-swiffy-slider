@@ -3,12 +3,6 @@ PLUGIN_SHORTCODE_SWIFFYSLIDER:
   PRODUCTION_MODE: Modo producción
   PRODUCTION_MODE_HELP: Cuando está habilitado, el plugin se renderizará con CSS minificado
   ENABLE_EXTENSIONS: Habilitar extensiones
-  REMOVE_TITLE: Eliminar títuo
-  SLIDER_SETTINGS: Configuración de Swiffy Slider
-  SLIDER_SETTINGS_TEXT: 'Más ayuda en <a href="https://swiffyslider.com/docs/" target="_blank">https://swiffyslider.com/docs/</a>'
-  AUTOPLAY: Autoplay
-  AUTOPLAY_HELP: Enable autoplay
-  AUTOPLAY_TIMEOUT: Autoplay timeout
-  AUTOPLAY_TIMEOUT_HELP: 'Changes the default autoplay interval - value is in ms. data-slider-nav-autoplay-interval="3000". Default value is 2500, minimum value is 750 ms'
-  AUTOPLAY_PAUSE: Autoplay pause on hover
-  AUTOPLAY_PAUSE_HELP: Stops and restarts the autoplay when mouse is hovering the slider wrapper or when it is touched on touch devices. Will restart on mouseout, but not when touch ends
+  ENABLE_EXTENSION_HELP: Algunas características de Swiffy Slider no se consideran funcionalidad principal y están en una librería JS separada para mantener la carga lo más ligera posible.
+  CUSTOM_CSS: CSS personalizado
+  CUSTOM_CSS_HELP: Clases CSS personalizadas para Swiffy Slider
