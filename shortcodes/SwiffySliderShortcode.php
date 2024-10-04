@@ -67,6 +67,9 @@ class SwiffySliderShortcode extends Shortcode
             $swiffy_autoplayPauseOnHover = $shortcode->getParameter('autoplayPauseOnHover', 'true');
             $swiffy_autoplayTimeout = $shortcode->getParameter('autoplayTimeout', '4000');
 
+            //Animation options
+            $swiffy_animationThreshold = $shortcode->getParameter('animationTreshold','0.3');
+
             /**** LOAD CONTENT ****/
 
             // find all images, that a carousel contains
@@ -133,6 +136,7 @@ class SwiffySliderShortcode extends Shortcode
                     'swiffy_autoplay' => filter_var($swiffy_autoplay, FILTER_VALIDATE_BOOLEAN),
                     'swiffy_autoplayPauseOnHover' => filter_var($swiffy_autoplayPauseOnHover, FILTER_VALIDATE_BOOLEAN),
                     'swiffy_autoplayTimeout' => $swiffy_autoplayTimeout,
+                    'swiffy_animationThreshold' => $swiffy_animationThreshold,
                     'classes' => $classes,
                     
                     // images

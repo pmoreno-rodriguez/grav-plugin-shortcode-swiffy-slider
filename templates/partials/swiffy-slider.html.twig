@@ -1,7 +1,8 @@
 <div class="swiffy-slider {% if swiffy_autoplay !=false %} slider-nav-autoplay {% endif %}
 {% if swiffy_autoplayPauseOnHover !=false %} slider-nav-autopause {% endif %} 
 {{ classes|trim }}" 
-id="{{ swiffy_id }}" {% if swiffy_autoplay and swiffy_autoplayTimeout|length > 0 %}data-slider-nav-autoplay-interval="{{ swiffy_autoplayTimeout }}"{% endif %}>
+id="{{ swiffy_id }}" {% if swiffy_autoplay and swiffy_autoplayTimeout|length > 0 %}data-slider-nav-autoplay-interval="{{ swiffy_autoplayTimeout }}"{% endif %}
+{% if swiffy_animationThreshold %}data-slider-nav-animation-threshold="{{ swiffy_animationThreshold }}"{% endif %}>
     <ul class="slider-container">
         {% for image in images %}
         <li>{{ image["image"]|raw }}</li>
