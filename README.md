@@ -32,17 +32,17 @@ Alternatively it can be installed via the [Admin Plugin](http://learn.getgrav.or
 This is a basic example that shows off how you can easily turn 3 images into a slider:
 
 ```
-[swiffy-slider autoplay=true autoplayTimeout=3000 autoplayPauseOnHover=true classes="item-show2 indicators-dark indicators-outside"]
-![pic04](pic04.jpg "Image 1<br />This is the first image<br />Additional info")
-![pic03](pic03.jpg "pic02")
-![pic02](pic02.jpg "pic03")
-![pic02](pic02.jpg "pic04")
-![pic02](pic02.jpg "pic05")
-![pic02](pic02.jpg "pic06")
+[swiffy-slider autoplay=true autoplayTimeout=3000 autoplayPauseOnHover=true classes="slider-item-reveal slider-nav-round slider-item-ratio slider-item-ratio-21x9"]
+![pic01](pic01.jpg "Image 1<br />This is the first image<br />Additional info")
+![pic02](pic02.jpg "pic02")
+![pic03](pic03.jpg "pic03")
+![pic04](pic04.jpg "pic04")
+![pic05](pic05.jpg "pic05")
+![pic06](pic06.jpg "pic06")
 [/swiffy-slider]
 ```
 
-In this examaple, we are wrapping 3 markdown-syntax images with the `[shortcode-swiffy-slider][/shortcode-swiffy-slider]` shortcode tag. 
+In this examaple, we are wrapping 3 markdown-syntax images with the `[swiffy-slider][/swiffy-slider]` shortcode tag. 
 
 ## Swiffy Slider Options
 
