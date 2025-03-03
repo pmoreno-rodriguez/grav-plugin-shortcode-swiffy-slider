@@ -1,6 +1,6 @@
 
 # v1.1.1
-## 01/03/2025
+## 03/03/2025
 
 1. [](#bugfix)
    * Fixed minified css classes
