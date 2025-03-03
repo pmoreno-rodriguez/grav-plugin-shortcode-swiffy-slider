@@ -1,11 +1,10 @@
 
-# v1.1.0
-## 10/22/2024
+# v1.1.1
+## 01/03/2025
 
 1. [](#bugfix)
    * Fixed minified css classes
    * Fixed error in shortcode in README
-
 
 # v1.1.0
 ## 10/04/2024
