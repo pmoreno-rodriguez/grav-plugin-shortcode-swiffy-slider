@@ -1,4 +1,10 @@
 
+# v1.1.2
+## 03/08/2025
+
+1. [](#new)
+   * Added demo page in plugin blueprints
+
 # v1.1.1
 ## 01/03/2025
 
