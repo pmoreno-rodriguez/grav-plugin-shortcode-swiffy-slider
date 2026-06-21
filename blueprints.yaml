@@ -1,7 +1,7 @@
 name: Shortcode Swiffy Slider
 slug: shortcode-swiffy-slider
 type: plugin
-version: 1.1.2
+version: 1.1.3
 description: "This plugin provides a shortcode for Swiffy slider"
 icon: columns
 author:
@@ -13,9 +13,11 @@ demo: https://pmdesign.dev/plugins/swiffy-slider
 keywords: shortcode, swiffy-slsider, slider
 bugs: https://github.com/pmoreno-rodriguez/grav-plugin-shortcode-swiffy-slider/issues
 license: MIT
+compatibility:
+  grav: ["1.7", "2.0"]
 
 dependencies:
-  - { name: shortcode-core, version: '>=4.1.0' }
+  - { name: shortcode-core, version: ">=4.1.0" }
 
 form:
   validation: strict
@@ -30,7 +32,7 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
-    
+
     production-mode:
       type: toggle
       label: PLUGIN_SHORTCODE_SWIFFYSLIDER.PRODUCTION_MODE
@@ -53,17 +55,16 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
-    
+
     custom_css:
       label: PLUGIN_ADMIN.CUSTOM_CSS_LABEL
       placeholder: PLUGIN_ADMIN.CUSTOM_CSS_PLACEHOLDER
       help: PLUGIN_ADMIN.CUSTOM_CSS_HELP
       type: editor
       codemirror:
-        mode: 'css'
+        mode: "css"
         indentUnit: 2
         autofocus: true
         indentWithTabs: true
         lineNumbers: true
         styleActiveLine: true
-            
